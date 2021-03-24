@@ -1,0 +1,3 @@
+/mnt/c/Users/filip/Documents/Programming projects/C_lang__/codingPractice/test/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/filip/Documents/Programming projects/C_lang__/codingPractice/test/CMakeFiles/edit_cache.dir
+/mnt/c/Users/filip/Documents/Programming projects/C_lang__/codingPractice/test/CMakeFiles/codingPractice.dir

@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Og -g   CMakeFiles/codingPractice.dir/mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/bubbleSort/bubble_sort.c.o CMakeFiles/codingPractice.dir/main.cpp.o CMakeFiles/codingPractice.dir/bubble_sort_test.cpp.o  -o codingPractice 
