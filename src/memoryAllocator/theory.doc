@@ -1,0 +1,76 @@
+Types of allocators 
+	Sequential bump vs. Free-list
+Algorithms:
+	First-fit
+	Next-fit
+	best-fit
+	segregated-fit
+
+
+Performance goals of memory allocation:
+	Throughput:
+		Maximaze malloc and free operations possible per second
+
+	Peak memory utilization:
+		Aggregate payload Pk
+			total number of bytes requested by the application
+		Current heap size Hk:
+			allocator can increase size of heap using sbrk()
+		Peak memory utilization
+			Uk = (maximum aggregate payload) / (size of the heap)
+
+Fragmentation
+	internal fragmentation - happens if payload is smaller than block size
+	external fragmentation - occurs when there is enough aggregate heap memory but no single block of memory is large enough
+	
+
+
+IMPLEMENTATION:
+	How much memory do I need to free given just a pointer? free(p)
+
+		Keep the length of a block in the word preceeding the block
+		Requires extra word for every allocated block which is called header
+
+	How do I keep track of the free blocks?
+
+		Method 1: Implicit list
+			Every header of memory blocks is linked (free or allocated)
+				For each block we need to know its size and determine if it is allocated or not
+				So one block contains:
+					first word : size + one lower bit flag (isAllocated/isFree)
+					payload
+					optional padding
+				Finding free block
+					First fit:
+						Choose first block that fits
+					Next fit: 
+						Works as first fit but starts searching from where it finished search at first
+					Best fit:
+						Searches entire block of memory and finds the most suitable memory block (with fewers leftover)
+
+					Coalescing - when there are two free'd blocks that are contiguous but logically separate, if we try to allocate chunk of memory that is bigger than size of either block but smaller than sum of their sizes that block of memory will not be allocated. That is why we need to coin those blocks so they will be logically treated as one big block of memory.
+					Bidirectional Coalescing - same but can go backwards when searching
+			This method is not used in practice by malloc() and free because it is linear time allocation (too slow)
+			
+		Method 2: Explicit list
+			Only headers of free blocks of memory are linked
+				Free block of memory contains:
+					first word : size + one lower bit flag (isAllocated/isFree)
+					next pointer
+					previous pointer
+			Insertion policy:
+				LIFO:
+					Insert freed block at the beginning of the free list
+				Address-ordered policy:
+					Insert freed block so that free list blocks are always in address order
+		Method 3: Segregated free list
+			Different free lists for different size classes
+				Each size class of blocks has its own free list (defferent list bor blocks size of 1-2, another for 3, 4, etc...
+		
+
+		Method 4: Blocks sorted by size
+			Can use balanced binary tree (e.g. red-black tree) with pointers to each free block and the length used as a key
+
+	How do I pick a block to use for allocation (when many might fit)
+	What do I do with extra space when allocating a structure that is smaller than the free block it is placed in?
+	How do I reinsert freed block into the heap?
