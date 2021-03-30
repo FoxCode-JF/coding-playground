@@ -63,7 +63,47 @@ void *memalloc(size_t size)
 
 void memfree(void *block)
 {
-	
+	header_t *header, *tmp;
+	header = (header_t*)block - 1;
+	void *program_break;
+
+
+	if(block == NULL)
+		return;
+
+	pthread_mutex_lock(&global_malloc_lock);
+	header = (header_t*)block - 1;
+
+	program_break = sbrk(0);
+
+	if ((uint8_t*)block + header->s.size == program_break)
+	{
+		if (head == tail)
+		{
+			head = NULL;
+			tail = NULL;
+		} else
+		{
+			tmp = head;
+
+			while (tmp)
+			{
+				if (tmp->s.next == tail)
+				{
+					tmp->s.next = NULL;
+					tail = tmp;
+				}
+				tmp = tmp->s.next;
+			}
+		}
+
+		sbrk (0 - (sizeof(header_t) + header->s.size))
+		pthread_mutex_unlock(&global_malloc_lock);
+		return;
+	}
+
+	header->s.is_free = true;
+	pthread_mutex_unlock(&global_malloc_lock);
 }
 
 /**
