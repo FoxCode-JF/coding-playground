@@ -13,6 +13,7 @@ set(CMAKE_CXX_FLAGS "-Wall")
 set(CMAKE_CXX_FLAGS_DEBUG "-Og -g")
 set(CMAKE_C_FLAGS_DEBUG "-Og -g")
 
+
 set(INCLUDE_DIRS
 	../src
     ../catch2
@@ -26,11 +27,13 @@ set(CPP_SRCS
 
 set(C_SRCS
 	../src/bubbleSort/bubble_sort.c
+	../src/memoryAllocator/memalloc.c
 )
 
 set(CPP_TEST_SRCS
 	main.cpp
 	bubble_sort_test.cpp
+	memory_allocator_tests.cpp
 )
 
 set(C_TEST_SRCS
@@ -41,8 +44,10 @@ set(GLOBAL_DEFINES
 
 )
 
-set(LINKED_LIBS
+find_package (Threads REQUIRED)
 
+set(LINKED_LIBS
+	${CMAKE_THREAD_LIBS_INIT}
 )
 
 link_directories(

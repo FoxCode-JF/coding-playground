@@ -177,6 +177,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/codingPractice.dir/build.make CMakeFiles/codingPractice.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+memory_allocator_tests.o: memory_allocator_tests.cpp.o
+
+.PHONY : memory_allocator_tests.o
+
+# target to build an object file
+memory_allocator_tests.cpp.o:
+	$(MAKE) -f CMakeFiles/codingPractice.dir/build.make CMakeFiles/codingPractice.dir/memory_allocator_tests.cpp.o
+.PHONY : memory_allocator_tests.cpp.o
+
+memory_allocator_tests.i: memory_allocator_tests.cpp.i
+
+.PHONY : memory_allocator_tests.i
+
+# target to preprocess a source file
+memory_allocator_tests.cpp.i:
+	$(MAKE) -f CMakeFiles/codingPractice.dir/build.make CMakeFiles/codingPractice.dir/memory_allocator_tests.cpp.i
+.PHONY : memory_allocator_tests.cpp.i
+
+memory_allocator_tests.s: memory_allocator_tests.cpp.s
+
+.PHONY : memory_allocator_tests.s
+
+# target to generate assembly for a file
+memory_allocator_tests.cpp.s:
+	$(MAKE) -f CMakeFiles/codingPractice.dir/build.make CMakeFiles/codingPractice.dir/memory_allocator_tests.cpp.s
+.PHONY : memory_allocator_tests.cpp.s
+
 mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/bubbleSort/bubble_sort.o: mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/bubbleSort/bubble_sort.c.o
 
 .PHONY : mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/bubbleSort/bubble_sort.o
@@ -204,6 +231,33 @@ mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/bub
 	$(MAKE) -f CMakeFiles/codingPractice.dir/build.make CMakeFiles/codingPractice.dir/mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/bubbleSort/bubble_sort.c.s
 .PHONY : mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/bubbleSort/bubble_sort.c.s
 
+mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/memoryAllocator/memalloc.o: mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/memoryAllocator/memalloc.c.o
+
+.PHONY : mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/memoryAllocator/memalloc.o
+
+# target to build an object file
+mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/memoryAllocator/memalloc.c.o:
+	$(MAKE) -f CMakeFiles/codingPractice.dir/build.make CMakeFiles/codingPractice.dir/mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/memoryAllocator/memalloc.c.o
+.PHONY : mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/memoryAllocator/memalloc.c.o
+
+mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/memoryAllocator/memalloc.i: mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/memoryAllocator/memalloc.c.i
+
+.PHONY : mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/memoryAllocator/memalloc.i
+
+# target to preprocess a source file
+mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/memoryAllocator/memalloc.c.i:
+	$(MAKE) -f CMakeFiles/codingPractice.dir/build.make CMakeFiles/codingPractice.dir/mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/memoryAllocator/memalloc.c.i
+.PHONY : mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/memoryAllocator/memalloc.c.i
+
+mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/memoryAllocator/memalloc.s: mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/memoryAllocator/memalloc.c.s
+
+.PHONY : mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/memoryAllocator/memalloc.s
+
+# target to generate assembly for a file
+mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/memoryAllocator/memalloc.c.s:
+	$(MAKE) -f CMakeFiles/codingPractice.dir/build.make CMakeFiles/codingPractice.dir/mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/memoryAllocator/memalloc.c.s
+.PHONY : mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/memoryAllocator/memalloc.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -219,9 +273,15 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... memory_allocator_tests.o"
+	@echo "... memory_allocator_tests.i"
+	@echo "... memory_allocator_tests.s"
 	@echo "... mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/bubbleSort/bubble_sort.o"
 	@echo "... mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/bubbleSort/bubble_sort.i"
 	@echo "... mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/bubbleSort/bubble_sort.s"
+	@echo "... mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/memoryAllocator/memalloc.o"
+	@echo "... mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/memoryAllocator/memalloc.i"
+	@echo "... mnt/c/Users/filip/Documents/Programming_projects/C_lang__/codingPractice/src/memoryAllocator/memalloc.s"
 .PHONY : help
 
 
