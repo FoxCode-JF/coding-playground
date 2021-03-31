@@ -23,7 +23,7 @@ int modular_exponent(uint64_t number,  uint64_t exponent, uint64_t modulo)
 			result = (result * kw) % modulo; 
 		}
 
-		kw = kw * kw;
+		kw = (kw * kw) % modulo;
 
 		tmp = bit_shift_right(tmp);
 	}

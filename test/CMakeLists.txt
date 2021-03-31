@@ -27,13 +27,15 @@ set(CPP_SRCS
 set(C_SRCS
 	../src/bubbleSort/bubble_sort.c
 	../src/matrixMultiply/matrix_multiply.c
+	../src/fastModularExponent/fast_modular_exponent.c
 )
 
 set(CPP_TEST_SRCS
 	main.cpp
-	bubble_sort_test.cpp
-	memory_allocator_tests.cpp
-	matrix_multiply_test.cpp
+	# bubble_sort_test.cpp
+	# memory_allocator_tests.cpp
+	# matrix_multiply_test.cpp
+	fast_modular_exponent_tests.cpp
 )
 
 set(C_TEST_SRCS
