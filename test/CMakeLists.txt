@@ -15,7 +15,8 @@ set(CMAKE_C_FLAGS_DEBUG "-Og -g")
 
 set(INCLUDE_DIRS
 	../src
-    ../catch2
+  ../catch2
+  /mnt/c/Program\ Files/OpenSSL-Win64/include
     # ../trompeloeil/include
 	# ../mingw-std-threads
 )
@@ -46,12 +47,15 @@ set(GLOBAL_DEFINES
 
 )
 
-set(LINKED_LIBS
+find_package(OpenSSL REQUIRED)
 
+set(LINKED_LIBS
+	OpenSSL::SSL
+	OpenSSL::Crypto
 )
 
 link_directories(
-
+		/mnt/c/Program Files/OpenSSL-Win64/lib
 )
 
 include_directories(${INCLUDE_DIRS})
@@ -62,4 +66,5 @@ add_definitions(${GLOBAL_DEFINES})
 # generate unit tests executable
 add_executable(${CMAKE_PROJECT_NAME} ${CPP_SRCS} ${C_SRCS} ${CPP_TEST_SRCS} ${C_TEST_SRCS})
 
-link_libraries(${CMAKE_PROJECT_NAME} ${LINKED_LIBS})
+# target_link_libraries(untitled )
+target_link_libraries(${CMAKE_PROJECT_NAME} ${LINKED_LIBS})
