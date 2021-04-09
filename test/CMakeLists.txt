@@ -32,6 +32,7 @@ set(C_SRCS
 	../src/matrixMultiply/matrix_multiply.c
 	../src/fastModularExponent/fast_modular_exponent.c
 	../src/GreatestCommonDivisor/GCD.c
+	../src/cryptography/vernam_cipher.c
 )
 
 set(CPP_TEST_SRCS
@@ -41,6 +42,7 @@ set(CPP_TEST_SRCS
 	matrix_multiply_test.cpp
 	fast_modular_exponent_tests.cpp
 	GCD_test.cpp
+	cryptography_tests/vernam_test.cpp
 )
 
 set(C_TEST_SRCS
