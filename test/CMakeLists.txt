@@ -28,17 +28,19 @@ set(CPP_SRCS
 
 set(C_SRCS
 	../src/bubbleSort/bubble_sort.c
-	../src/memoryAllocator/memalloc.c
+	# ../src/memoryAllocator/memalloc.c
 	../src/matrixMultiply/matrix_multiply.c
 	../src/fastModularExponent/fast_modular_exponent.c
+	../src/GreatestCommonDivisor/GCD.c
 )
 
 set(CPP_TEST_SRCS
 	main.cpp
-	# bubble_sort_test.cpp
+	bubble_sort_test.cpp
 	# memory_allocator_tests.cpp
-	# matrix_multiply_test.cpp
+	matrix_multiply_test.cpp
 	fast_modular_exponent_tests.cpp
+	GCD_test.cpp
 )
 
 set(C_TEST_SRCS
@@ -53,6 +55,8 @@ find_package (Threads REQUIRED)
 
 set(LINKED_LIBS
 	${CMAKE_THREAD_LIBS_INIT}
+)
+
 find_package(OpenSSL REQUIRED)
 
 set(LINKED_LIBS
