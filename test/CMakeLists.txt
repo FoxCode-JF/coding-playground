@@ -33,6 +33,8 @@ set(C_SRCS
 	../src/fastModularExponent/fast_modular_exponent.c
 	../src/GreatestCommonDivisor/GCD.c
 	../src/cryptography/vernam_cipher.c
+	../src/cryptography/vigenere_cipher.c
+	../src/cryptography/crypto_utils.c
 )
 
 set(CPP_TEST_SRCS
@@ -43,6 +45,7 @@ set(CPP_TEST_SRCS
 	fast_modular_exponent_tests.cpp
 	GCD_test.cpp
 	cryptography_tests/vernam_test.cpp
+	cryptography_tests/vigenere_test.cpp
 )
 
 set(C_TEST_SRCS
@@ -54,16 +57,12 @@ set(GLOBAL_DEFINES
 )
 
 find_package (Threads REQUIRED)
-
-set(LINKED_LIBS
-	${CMAKE_THREAD_LIBS_INIT}
-)
-
 find_package(OpenSSL REQUIRED)
 
 set(LINKED_LIBS
 	OpenSSL::SSL
 	OpenSSL::Crypto
+	${CMAKE_THREAD_LIBS_INIT}
 )
 
 link_directories(
