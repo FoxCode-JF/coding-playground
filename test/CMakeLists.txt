@@ -35,6 +35,7 @@ set(C_SRCS
 	../src/cryptography/vernam_cipher.c
 	../src/cryptography/vigenere_cipher.c
 	../src/cryptography/crypto_utils.c
+	../src/cryptography/random_num_gen_BBS.c
 )
 
 set(CPP_TEST_SRCS
@@ -46,6 +47,7 @@ set(CPP_TEST_SRCS
 	GCD_test.cpp
 	cryptography_tests/vernam_test.cpp
 	cryptography_tests/vigenere_test.cpp
+	cryptography_tests/BBS_test.cpp
 )
 
 set(C_TEST_SRCS
