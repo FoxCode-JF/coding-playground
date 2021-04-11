@@ -48,7 +48,7 @@ SCENARIO("Vernam cipher encrypt and decode")
 
 				REQUIRE(strncmp(encrypted_message, expected, 6) == 0);
 
-				WHEN("Number encrypted")
+				WHEN("Message encrypted")
 				{
 					THEN("Decode")
 					{
