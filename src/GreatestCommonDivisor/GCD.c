@@ -1,9 +1,9 @@
 #include "GCD.h"
 #include <stdbool.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <math.h>
 
-// static bool is_even(int number);
 
 int gcd_euclid_sub(int a, int b)
 {
@@ -20,7 +20,7 @@ int gcd_euclid_sub(int a, int b)
 	return a;
 }
 
-int gcd_euclid_mod(int a, int b)
+uint64_t gcd_euclid_mod(uint64_t a, uint64_t b)
 {
 	if (a % b == 0)
 	{
@@ -63,6 +63,26 @@ int gcd_stein(int a, int b)
 		}
 	}
 	return a * pow(2, exponent);
+}
+
+uint64_t gcd_euclid_extended(uint64_t a, uint64_t b, int64_t* x, int64_t* y)
+{
+    // Base Case
+    if (a == 0)
+    {
+        *x = 0, *y = 1;
+        return b;
+    }
+ 
+    int64_t x1, y1; // To store results of recursive call
+    uint64_t gcd = gcd_euclid_extended(b % a, a, &x1, &y1);
+ 
+    // Update x and y using results of recursive
+    // call
+    *x = y1 - (b / a) * x1;
+    *y = x1;
+ 
+    return gcd;
 }
 
 bool is_even(int number)

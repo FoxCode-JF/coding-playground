@@ -36,18 +36,20 @@ set(C_SRCS
 	../src/cryptography/vigenere_cipher.c
 	../src/cryptography/crypto_utils.c
 	../src/cryptography/random_num_gen_BBS.c
+	../src/cryptography/RSA_cipher.c
 )
 
 set(CPP_TEST_SRCS
 	main.cpp
-	bubble_sort_test.cpp
+	# bubble_sort_test.cpp
 	# memory_allocator_tests.cpp
-	matrix_multiply_test.cpp
-	fast_modular_exponent_tests.cpp
-	GCD_test.cpp
-	cryptography_tests/vernam_test.cpp
-	cryptography_tests/vigenere_test.cpp
+	# matrix_multiply_test.cpp
+	# fast_modular_exponent_tests.cpp
+	# GCD_test.cpp
+	# cryptography_tests/vernam_test.cpp
+	# cryptography_tests/vigenere_test.cpp
 	cryptography_tests/BBS_test.cpp
+	cryptography_tests/RSA_test.cpp
 )
 
 set(C_TEST_SRCS
